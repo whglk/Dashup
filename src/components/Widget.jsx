@@ -1,7 +1,7 @@
 // src/components/Widget.jsx
 import React, { useState } from 'react';
 import { X, Edit2, Check } from 'lucide-react';
-import { NoteWidget, TodoWidget, CounterWidget } from './widgets';
+import { NoteWidget, TodoWidget, CounterWidget, CalendarWidget, ChartWidget } from './widgets/index';
 
 const Widget = ({ widget, onRemove, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -24,6 +24,10 @@ const Widget = ({ widget, onRemove, onUpdate }) => {
         return <TodoWidget content={widget.content} onUpdate={handleContentUpdate} />;
       case 'counter':
         return <CounterWidget content={widget.content} onUpdate={handleContentUpdate} />;
+      case 'calendar':
+          return <CalendarWidget content={widget.content} onUpdate={handleContentUpdate} />;
+      case 'chart':
+          return <ChartWidget content={widget.content} onUpdate={handleContentUpdate} />;
       default:
         return <div>Type de widget non supporté</div>;
     }
@@ -31,7 +35,7 @@ const Widget = ({ widget, onRemove, onUpdate }) => {
 
   return (
     <div className="h-full bg-white p-4 rounded-lg shadow flex flex-col">
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-center mb-2 widget-header">
         {isEditing ? (
           <div className="flex gap-2 items-center">
             <input

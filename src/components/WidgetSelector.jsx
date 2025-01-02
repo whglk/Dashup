@@ -1,6 +1,6 @@
 // src/components/WidgetSelector.jsx
 import React from 'react';
-import { StickyNote, CheckSquare, Hash } from 'lucide-react';
+import { StickyNote, CheckSquare, Hash, Calendar, BarChart } from 'lucide-react';
 
 const WidgetSelector = ({ onSelect, onClose }) => {
   const widgetTypes = [
@@ -21,7 +21,19 @@ const WidgetSelector = ({ onSelect, onClose }) => {
       name: 'Compteur',
       icon: <Hash size={24} />,
       defaultContent: { count: 0 }
-    }
+    },
+    {
+      id: 'calendar',
+      name: 'Calendrier',
+      icon: <Calendar size={24} />,
+      defaultContent: { events: [] },
+    },
+    {
+      id: 'chart',
+      name: 'Graphique',
+      icon: <BarChart size={24} />,
+      defaultContent: { data: [10, 20, 30, 40] },
+    },
   ];
 
   return (

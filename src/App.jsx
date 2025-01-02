@@ -36,6 +36,22 @@ const WIDGET_CONFIGS = {
     maxH: 6,
     defaultW: 4,
     defaultH: 4
+  },
+  calendar: {
+    minW: 3,
+    minH: 3, 
+    maxW: 6, 
+    maxH: 6,
+    defaultW: 4,
+    defaultH: 4
+  },
+  chart: {
+    minW: 3, 
+    minH: 3, 
+    maxW: 6, 
+    maxH: 6, 
+    defaultW: 4,
+    defaultH: 4
   }
 };
 
@@ -117,7 +133,7 @@ const App = () => {
   };
 
   // Gestionnaire de Layout
-  const onLayoutChange = (_, allLayouts) => {
+  const onLayoutChange = (currentLayout, allLayouts) => {
     setLayouts(allLayouts);
   };
 
